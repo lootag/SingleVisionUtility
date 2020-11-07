@@ -5,3 +5,5 @@ CPackSourceConfig.cmake
 Makefile
 svu
 test.h5
+data.zip
+job1.json
