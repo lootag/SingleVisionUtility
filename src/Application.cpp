@@ -1,24 +1,22 @@
 #include <iostream>
 
 #include "Application.hpp"
+#include "dispatchers/Include/Implementations/DispatcherFactory.hpp"
+#include "entities/Include/CommandLineOptions.hpp"
 
 
-Application::Application()
+Application::Application(std::shared_ptr<dispatchers::DispatcherFactory> dispatcherFactory)
 {
-    Hypodermic::ContainerBuilder builder;
-    builder.registerType< init::InitializationService >()
-        .as < init::IInitializationService >();
-    
-    this->m_container = builder.build();
+    this->_dispatcherFactory = dispatcherFactory;
 }
 
 Application::~Application()
 {
-
+    
 }
 
-void Application::run()
+void Application::run(const entities::CommandLineOptions& commandLineOptions)
 {
-    auto initializer = this->m_container->resolve < init::IInitializationService >();
-    initializer->Initialize();
+    auto dispatcher = this->_dispatcherFactory->Create(commandLineOptions.GetAction());
+    dispatcher->Dispatch();
 }

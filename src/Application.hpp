@@ -1,21 +1,21 @@
 #ifndef APPLICATION
 #define APPLICATION
-#include "../bin/lib/vendor/Hypodermic/Hypodermic/Hypodermic.h"
-#include "init/Include/IInitializationService.hpp"
-#include "init/Include/Implementations/InitializationService.hpp"
+#include <memory>
+#include "init/Include/Interfaces/IInitializationService.hpp"
+#include "entities/Include/CommandLineOptions.hpp"
+#include "dispatchers/Include/Implementations/DispatcherFactory.hpp"
 
 class Application
 {
     public:
-        Application(/* args */);
+        Application(std::shared_ptr<dispatchers::DispatcherFactory> dispatcherFactory);
         ~Application();
-        void run();
+        void run(const entities::CommandLineOptions& commandLineOptions);
     private:
-        std::shared_ptr< Hypodermic::Container > m_container;
-    
+        std::shared_ptr<dispatchers::DispatcherFactory> _dispatcherFactory;
+
 };
 
 
 //TODO:I should change Hypodermic's include paths in order for the executable to refer to the local copy of the library.
-
 #endif
