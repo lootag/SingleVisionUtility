@@ -4,7 +4,7 @@
 #include "../../enums/DetectionArch.hpp"
 #include "../../enums/JobType.hpp"
 #include "../../enums/Task.hpp"
-#include "../../../bin/lib/vendor/Json/json.hpp"
+#include "../../vendor/Json/json.hpp"
 
 namespace init
 {

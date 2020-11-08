@@ -4,7 +4,7 @@
 #include "Application.hpp"
 #include "init/Include/Interfaces/IInitializationService.hpp"
 #include "init/Include/Implementations/InitializationService.hpp"
-#include "../bin/lib/vendor/Hypodermic/Hypodermic/Hypodermic.h"
+#include "vendor/Hypodermic/Hypodermic/Hypodermic.h"
 #include "dispatchers/Include/Implementations/DispatcherFactory.hpp"
 #include "enums/Action.hpp"
 #include "entities/Include/CommandLineOptions.hpp"

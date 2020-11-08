@@ -9,7 +9,6 @@ add_subdirectory(lib/init)
 add_subdirectory(lib/entities)
 add_subdirectory(lib/dispatchers)
 
-add_subdirectory(lib/vendor/Hypodermic)
 
 
 add_executable(

@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 
 #include "../../Include/Implementations/InitializationService.hpp"
-#include "../../../../bin/lib/vendor/Json/json.hpp"
+#include "../../../vendor/Json/json.hpp"
 #include "../../dtos/Job.hpp"
 
 namespace init
